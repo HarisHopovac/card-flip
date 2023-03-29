@@ -1,0 +1,48 @@
+body {
+    height: 100vh;
+    background-color: rgb(6, 34, 45);
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.card {
+    perspective: 1000px;
+    height: 320px;
+    width: 220px;
+    position: relative;
+    margin: 5px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card .card-back {
+    position: absolute;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    transition: transform 0.4s linear;
+}
+
+.card .card-front {
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: transform 0.4s linear;
+}
+
+.card:hover .card-back {
+    transform: rotateY(-180deg);
+    cursor: pointer;
+}
+
+.card:hover .card-front {
+    transform: rotateY(0deg);
+    cursor: pointer;
+}
